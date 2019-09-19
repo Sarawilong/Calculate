@@ -4,6 +4,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MultiplyService {
+ 
+  multiplyResult(choosenTva, userValue) {
+    return choosenTva * userValue
+  }
 
   constructor() { }
 }
