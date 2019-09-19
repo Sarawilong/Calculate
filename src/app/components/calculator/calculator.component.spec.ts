@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CalculatorComponent } from './calculator.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MultiplyService } from'../../services/multiply.service';
 
 describe('CalculatorComponent', () => {
   let component: CalculatorComponent;
@@ -9,8 +10,18 @@ describe('CalculatorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ FormsModule, ReactiveFormsModule ],
-      declarations: [ CalculatorComponent ]
+      imports: [ 
+        FormsModule, 
+        ReactiveFormsModule, 
+      ],
+      declarations: 
+      [ 
+        CalculatorComponent,
+      ],
+      providers: 
+      [ 
+        MultiplyService,
+      ],
     })
     .compileComponents();
   }));
@@ -21,12 +32,12 @@ describe('CalculatorComponent', () => {
     fixture.detectChanges();
   });
   
-  describe('calculateTva', () => {
-    it('should return a positive number, the result of tva * userInput', () => {
-      const result = this.component.calculateTva()
-      expect(result).toBe(typeof Number)
-    })
-  });
+  // describe('calculateTva', () => {
+  //   it('should return a positive number, the result of tva * userInput', () => {
+  //     const result = component.calculateTva();
+  //     expect(result).toEqual(16)
+  //   })
+  // });
 
   // it('should create', () => {
   //   expect(component).toBeTruthy();

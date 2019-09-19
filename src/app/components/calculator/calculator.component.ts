@@ -19,7 +19,7 @@ export class CalculatorComponent{
   ];
 
   calculateTva() {
-    this.result = this.multiplyService.multiplyResult(this.selectedOption, this.userValue);
+    return this.result = this.multiplyService.multiplyResult(this.selectedOption, this.userValue);
   }
 
   constructor( private multiplyService: MultiplyService ) { }
