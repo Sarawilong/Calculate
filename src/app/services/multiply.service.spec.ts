@@ -12,7 +12,7 @@ describe('MultiplyService', () => {
     expect(service).toBeTruthy();
   });
 
-  describe('calculateTva', () => {
+  describe('should calculateTva', () => {
     it('should return a positive number, the result of tva * userInput', () => {
       const result = service.multiplyResult(4, 4)
       expect(result).toEqual(16)

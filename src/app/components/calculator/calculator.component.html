@@ -7,7 +7,8 @@
       <div class="col-md-12">
         <div class="form-group">
           <div>
-            <select [(ngModel)]="selectedOption">          
+            <select 
+            [(ngModel)]="selectedOption">          
               <option *ngFor="let type of types"> 
                 {{ type.value }}
               </option>
@@ -15,6 +16,7 @@
           </div>
           <div>
             <input 
+              value="price"
               type="number" 
               class="form-control"
               [(ngModel)]="userValue"

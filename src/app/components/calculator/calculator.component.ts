@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MultiplyService } from 'src/app/services/multiply.service';
 
 @Component({
@@ -19,7 +19,7 @@ export class CalculatorComponent{
   ];
 
   calculateTva() {
-    return this.result = this.multiplyService.multiplyResult(this.selectedOption, this.userValue);
+     this.result = this.multiplyService.multiplyResult(this.selectedOption, this.userValue);
   }
 
   constructor( private multiplyService: MultiplyService ) { }
