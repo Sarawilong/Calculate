@@ -50,7 +50,6 @@ describe('CalculatorComponent', () => {
     expect(element1.getAttribute("option")).toBeDefined();
   });
   
-
   it ("check if the function is calling the service ", async()=>{
     let service = TestBed.get(MultiplyService);
     spyOn(service , "multiplyResult").and.callThrough();
@@ -58,5 +57,4 @@ describe('CalculatorComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
 })

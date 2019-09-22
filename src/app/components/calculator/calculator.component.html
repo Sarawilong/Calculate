@@ -7,8 +7,7 @@
       <div class="col-md-12">
         <div class="form-group">
           <div>
-            <select 
-            [(ngModel)]="selectedOption">          
+            <select [(ngModel)]="selectedOption">          
               <option *ngFor="let type of types"> 
                 {{ type.value }}
               </option>
@@ -32,8 +31,8 @@
           </div>
         </div>
         <div 
-        class="card-footer"
-        id="result"
+          class="card-footer"
+          id="result"
         > {{ result }} 
         </div>
       </div>

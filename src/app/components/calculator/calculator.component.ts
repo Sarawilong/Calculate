@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { MultiplyService } from 'src/app/services/multiply.service';
-import { FormControl, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-calculator',
@@ -22,11 +21,12 @@ export class CalculatorComponent{
   calculateTva() {
     
     if(this.userValue < 0){
+
       return NaN;
     }
+
     this.result = this.multiplyService.multiplyResult(this.selectedOption, this.userValue);
   }
 
   constructor( private multiplyService: MultiplyService ) { }
-
 }

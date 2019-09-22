@@ -8,6 +8,4 @@ export class AppPage {
   getTitleText() {
     return element(by.css('app-calculator h2')).getText() as Promise<string>;
   }
-
-
 }

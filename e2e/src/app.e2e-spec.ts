@@ -15,7 +15,6 @@ describe('workspace-project App', () => {
   });
 
   it('it should multiply', function() {
-
     element(by.css('input')).sendKeys('2');
     element(by.css('select')).sendKeys('20');
     element(by.tagName('button')).click();
