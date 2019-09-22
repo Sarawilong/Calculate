@@ -14,7 +14,7 @@ describe('workspace-project App', () => {
     expect(page.getTitleText()).toEqual('CALCULATE TVA');
   });
 
-  it('it multiply', function() {
+  it('it should multiply', function() {
 
     element(by.css('input')).sendKeys('2');
     element(by.css('select')).sendKeys('20');
