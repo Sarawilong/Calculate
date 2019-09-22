@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MultiplyService } from 'src/app/services/multiply.service';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-calculator',
@@ -10,7 +11,7 @@ export class CalculatorComponent{
 
   userValue: number;
   result: number;
-  selectedOption: number;
+  selectedOption: number;  
 
   types = [
     { name: "type1", value: 12 },
