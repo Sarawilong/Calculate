@@ -13,9 +13,16 @@ describe('MultiplyService', () => {
   });
 
   describe('should calculateTva', () => {
-    it('should return a positive number, the result of tva * userInput', () => {
+    it('should works a positive number', () => {
       const result = service.multiplyResult(4, 4)
       expect(result).toEqual(16)
-    })
+    });
+
+  describe('should calculateTva', () => {
+    it('should works with decimal number', () => {
+      const result = service.multiplyResult(12, 2.5)
+      expect(result).toEqual(30)
+      });
+    });
   });
 });

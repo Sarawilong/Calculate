@@ -9,7 +9,7 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 })
 export class CalculatorComponent{
 
-  userValue: number;
+  userValue;
   result: number;
   selectedOption: number;  
 
@@ -20,7 +20,11 @@ export class CalculatorComponent{
   ];
 
   calculateTva() {
-     this.result = this.multiplyService.multiplyResult(this.selectedOption, this.userValue);
+    
+    if(this.userValue < 0){
+      return NaN;
+    }
+    this.result = this.multiplyService.multiplyResult(this.selectedOption, this.userValue);
   }
 
   constructor( private multiplyService: MultiplyService ) { }

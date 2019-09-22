@@ -44,19 +44,19 @@ describe('CalculatorComponent', () => {
     expect(element1.getAttribute("value")).toContain("price");
   });
 
-  it ("check if there is a button that calls a function", async()=>{
-    let button = fixture.debugElement.nativeElement.querySelector('button');
-    button.click();
-
-      fixture.whenStable().then(() => {
-      expect(component.calculateTva).toHaveBeenCalled();
-    });
-  });
-
   it ("check if there is a select value", async()=>{
     let fixture= TestBed.createComponent(CalculatorComponent);
     let element1= fixture.debugElement.nativeElement.querySelector("select");
     expect(element1.getAttribute("option")).toBeDefined();
+  });
+  
+
+  it ("check if the function is calling the service ", async()=>{
+    let service = TestBed.get(MultiplyService);
+    spyOn(service , "multiplyResult").and.callThrough();
+    fixture = TestBed.createComponent(CalculatorComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
 })
