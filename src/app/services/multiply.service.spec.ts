@@ -36,7 +36,5 @@ describe('MultiplyService', () => {
       const result = service.calculateTva(92.142);
       expect(result).toEqual(18.43);
     });
-
   });
-
 });

@@ -14,7 +14,7 @@ describe('App', () => {
 
     it('should display a Title', () => {
       page.navigateTo();
-      expect(page.getTitleText()).toEqual('CALCULATE TVA');
+      expect(page.getTitleText()).toEqual('CALCULATE');
     });
 
     it('should display an input', () => {
@@ -40,7 +40,6 @@ describe('App', () => {
       const tva = element(by.id('tva'));
       expect(tva.isDisplayed()).toBeTruthy();
     });
-
   });
 
   describe ('features', () => {
@@ -62,7 +61,6 @@ describe('App', () => {
     it('should calculate the tva', () => {
       expect(element(by.id('tva')).getText()).toEqual('8');
     });
-
   });
 
   afterEach(async () => {

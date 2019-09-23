@@ -14,8 +14,6 @@ export class CalculateService {
   }
 
   calculateTva(result) {
-    console.log('result')
-
     return (Math.round(result * 0.2 * 100)) / 100;
   }
 }

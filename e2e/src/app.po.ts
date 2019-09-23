@@ -1,4 +1,8 @@
-import { browser, by, element } from 'protractor';
+import {
+  browser,
+  by,
+  element,
+} from 'protractor';
 
 export class AppPage {
   navigateTo() {
@@ -8,5 +12,4 @@ export class AppPage {
   getTitleText() {
     return element(by.css('app-calculator h2')).getText() as Promise<string>;
   }
-
 }
