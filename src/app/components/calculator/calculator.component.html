@@ -7,7 +7,7 @@
       <div class="col-md-12">
         <div class="form-group">
           <div>
-            <select [(ngModel)]="selectedOption">          
+            <select [(ngModel)]="type">          
               <option *ngFor="let type of types"> 
                 {{ type.value }}
               </option>
@@ -25,15 +25,20 @@
             <button 
               class="btn btn-success" 
               type="submit"
-              (click)="calculateTva(tva)"
-            > Calculer la TVA
+              (click)="calculateTva()"
+            > Calculer le résultat
             </button>
           </div>
         </div>
         <div 
           class="card-footer"
           id="result"
-        > {{ result }} 
+        > Montant : {{ result }} 
+        </div>
+        <div 
+          class="tva"
+          id="tva"
+        > TVA : {{ tva }} 
         </div>
       </div>
     </div>

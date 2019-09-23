@@ -4,9 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MultiplyService {
-  multiplyResult(choosenTva, userValue) {
-    return choosenTva * userValue
+
+  multiplyResult(type, userValue) {
+
+    return type * userValue;
   }
 
-  constructor() { }
+  calculateTva(result) {
+
+    return (Math.round(result * 0.2 * 100)) / 100;
+  }
 }
