@@ -17,7 +17,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). 
 
-## Description of the service
+## Description of the tests
 
 - Caculate.service.ts:
 The service provides two functions, the first one 'multiplyResult()', is used to calculate the input amount field by the user and the type selected. It will throw an error if the value of the input is either negative or equal to none.
@@ -32,6 +32,11 @@ Test run on the service:
 - check if the calcul does not work with a negative number,
 - check if the calcul with the tva is applied on the result of the first function,
 - and verify that this one also work with decimal number.
+
+- app.e2e-spec:
+- Verify that on the page wi've got an input, a select and a button
+- It will also verify that the result and TVA is displayed
+- the fonctionnal test will be used to simulate the user action by entering a value in the input tag and select a type and calculate all that by clicking on the button 'calculate'. This one will call the function associated and check if the results are correct.
 
 
 
