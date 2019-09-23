@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { MultiplyService } from 'src/app/services/multiply.service';
-import { throwError } from 'rxjs';
+import { CalculateService } from 'src/app/services/calculate.service';
 
 @Component({
   selector: 'app-calculator',
@@ -8,6 +7,10 @@ import { throwError } from 'rxjs';
   styleUrls: ['./calculator.component.scss']
 })
 export class CalculatorComponent {
+
+  constructor(
+    private multiplyService: CalculateService
+    ) {}
 
   userValue;
   result: number;
@@ -21,15 +24,8 @@ export class CalculatorComponent {
   ];
 
   async calculateTva() {
-
-    if (this.userValue <= 0) {
-
-      return throwError('the number can not be negative or equals to zero');
-    }
-
     this.result = await this.multiplyService.multiplyResult(this.type, this.userValue);
     this.tva =  this.multiplyService.calculateTva(this.result);
   }
 
-  constructor( private multiplyService: MultiplyService ) { }
 }

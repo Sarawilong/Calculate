@@ -2,27 +2,68 @@ import { AppPage } from './app.po';
 import { browser, logging, by, element } from 'protractor';
 
 
-describe('workspace-project App', () => {
+describe('App', () => {
   let page: AppPage;
+  const input = element(by.tagName('input'));
 
   beforeEach(() => {
     page = new AppPage();
   });
 
-  it('should display a Title', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('CALCULATE TVA');
+  describe('tags ', () => {
+
+    it('should display a Title', () => {
+      page.navigateTo();
+      expect(page.getTitleText()).toEqual('CALCULATE TVA');
+    });
+
+    it('should display an input', () => {
+      expect(input.isPresent()).toBeTruthy();
+    });
+
+    it('should display a select', () => {
+      const select = element(by.tagName('select'));
+      expect(select.isPresent()).toBeTruthy();
+    });
+
+    it('should display a button', () => {
+      const button = element(by.tagName('button'));
+      expect(button.isPresent()).toBeTruthy();
+    });
+
+    it('should display result', () => {
+      const result = element(by.id('result'));
+      expect(result.isPresent()).toBeTruthy();
+    });
+
+    it('should display TVA', () => {
+      const tva = element(by.id('tva'));
+      expect(tva.isDisplayed()).toBeTruthy();
+    });
+
   });
 
-  it('it should multiply', function() {
-    element(by.css('input')).sendKeys('2');
-    element(by.css('select')).sendKeys('20');
-    element(by.tagName('button')).click();
+  describe ('features', () => {
 
-    browser.sleep(3000);
+    beforeEach(() => {
+      element(by.tagName('input')).sendKeys('2');
+      element(by.tagName('select')).sendKeys('20');
+      element(by.tagName('button')).click();
+    });
 
-    expect(element(by.id('result')).getText()).toEqual('40');
-  })
+    afterEach(() => {
+      input.clear();
+    });
+
+    it('should multiply', () => {
+      expect(element(by.id('result')).getText()).toEqual('Montant : 40');
+    });
+
+    it('should calculate the tva', () => {
+      expect(element(by.id('tva')).getText()).toEqual('8');
+    });
+
+  });
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
